@@ -1,11 +1,17 @@
-<main class="container">
+<main class="container" (mousedown)="startDrag($event)"
+(mousemove)="dragging($event)"
+(mouseup)="endDrag($event)"
+(mouseleave)="endDrag($event)"
+(touchstart)="startDrag($event)"
+(touchmove)="dragging($event)"
+(touchend)="endDrag($event)">
     @if (previousBtn) {
         <button  class="action-btn" (click)="previousImage()"> < </button>
     }
 
     <div class="image-container">
         @for (url of data; track $index) {
-            <div 
+            <div
                 class="image-item"
                 [ngClass]="{'active': $index === currentIndex }"
                 [style]="'--index:' + currentIndex"
@@ -18,11 +24,11 @@
     @if (nextBtn) {
         <button class="action-btn" (click)="nextImage()"> > </button>
     }
-    
+
     <div class="bottom-bar">
         @for (item of data; track $index) {
-            <div 
-            class="bottom-item" 
+            <div
+            class="bottom-item"
             [ngClass]="{'active': $index === currentIndex }"
             (click)="currentIndex = $index"
             ></div>
