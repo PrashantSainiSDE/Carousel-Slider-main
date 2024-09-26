@@ -12,5 +12,5 @@ import { CarouselSliderComponent } from "./carousel-slider/Feature/carousel-slid
     imports: [CommonModule, RouterOutlet, HttpClientModule, CarouselSliderComponent]
 })
 export class AppComponent {
-  title = '17SSR';
+  title = 'Carousel';
 }
